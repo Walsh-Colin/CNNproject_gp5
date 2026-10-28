@@ -18,12 +18,19 @@ Open the project folder, then open a Python notebook such as `Model/ResNet_Fruit
 
 ## 4. Connect to Jupyter
 
+Before setting up the Kernal, setup your .env file first. It is as simple as getting your
+access token and filling in the missing text
+
+**Create your OWN .env file do NOT update the .env_template as it will commit a secret to the repo**
+
 1. Click **Select Kernel** at the top right. If a kernel is already selected, click its name.
 2. Choose **Select Another Kernel…** if shown, then **Existing Jupyter Server**.
 3. Choose **Enter the URL of the running Jupyter server** and enter:
-
+   **!IMPORTANT!**
+   Make sure you input the URL like this, if not VS Code will keep reprompting you for
+   a password and it will not connect to the Kernal
    ```text
-   https://hades.taild3c5cd.ts.net:8889/
+   https://hades.taild3c5cd.ts.net:8889/?token=<YOUR_ACCESS_TOKEN>
    ```
 
 4. For the password it is the token that the admins sends
