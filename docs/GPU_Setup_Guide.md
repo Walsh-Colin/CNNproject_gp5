@@ -32,6 +32,8 @@ Open the project folder, then open a Python notebook such as `Model/ResNet_Fruit
    https://hades.taild3c5cd.ts.net:8889/?token=YOUR_PRIVATE_TOKEN
    ```
 
+You can ask the admin to send the token in an ecrypted link.
+
 Keep the actual token out of notebook cells, Git commits and screenshots. These steps follow the [VS Code remote kernel guide](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management#_existing-jupyter-server).
 
 ## 5. Start your own remote kernel
