@@ -26,10 +26,7 @@ Open the project folder, then open a Python notebook such as `Model/ResNet_Fruit
    https://hades.taild3c5cd.ts.net:8889/
    ```
 
-4. Enter the shared authentication token provided privately when prompted. If VS Code requires the token in the URL, enter this in the connection box, replacing `YOUR_PRIVATE_TOKEN`:
-
-   ```text
-   https://hades.taild3c5cd.ts.net:8889/?token=YOUR_PRIVATE_TOKEN
+4. For the password it is the token that the admins sends
    ```
 
 You can ask the admin to send the token in an ecrypted link.
