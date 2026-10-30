@@ -1,6 +1,6 @@
 # Fruit Classification Using a ResNet CNN
 
-CS4287 — Neural Computing, Assignment 1  
+CS4287 - Neural Computing, Assignment 1  
 University of Limerick | Group 5
 
 **Team:** Colin Walsh, Luke Scanlon and Evelyn Sadlier
@@ -48,3 +48,13 @@ the project code, analysis and resized image preparation.
 
 The resized dataset remains under CC BY-SA 4.0. When sharing it, retain attribution,
 identify the changes and include the licence link.
+
+## Shared project resources
+
+**Shared report:** [Fruit Classification CNN (OneDrive / SharePoint)](https://ulcampus-my.sharepoint.com/:w:/r/personal/23367989_studentmail_ul_ie/Documents/Fruit%20Classification%20CNN.docx?d=wb0d4a5fec84d40e0830fe739652bddda&csf=1&web=1&e=YspIpL)
+
+The shared Word document is used to collaborate on the project report.
+Access is managed through the document's sharing permissions; contact
+a group member if you need access.
+
+Source code and notebook changes are tracked in this Git repository.
