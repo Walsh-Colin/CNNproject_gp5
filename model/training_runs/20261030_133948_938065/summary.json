@@ -1,0 +1,9 @@
+{
+  "epochs_completed": 30,
+  "training_seconds": 851.0674008659553,
+  "best_epoch": 28,
+  "training_loss_at_best_epoch": 0.011109886690974236,
+  "training_accuracy_at_best_epoch": 0.9965346455574036,
+  "best_validation_loss": 0.0030586873181164265,
+  "validation_accuracy_at_best_epoch": 0.9992174506187439
+}
