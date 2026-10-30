@@ -79,7 +79,7 @@ verify GPU availability and shut down your session when finished.
 ## Model architecture
 
 Our model is a **ResNet-20**, implemented with TensorFlow/Keras in
-[ResNet_Fruits.ipynb](model/ResNet_Fruits.ipynb). It takes a 32 x 32 RGB image
+[CS4287-Assign-23363185-23390573-23367989.ipynb](model/CS4287-Assign-23363185-23390573-23367989.ipynb). It takes a 32 x 32 RGB image
 and outputs a probability for each of the 274 dataset classes.
 
 | Stage | Structure | Output shape per image |
@@ -107,7 +107,7 @@ The current configuration uses **Adam** with a learning rate of **0.001**,
 ```text
 CNNproject_gp5/
 |-- model/
-|   `-- ResNet_Fruits.ipynb       # Data preparation and ResNet implementation
+|   `-- CS4287-Assign-23363185-23390573-23367989.ipynb       # Data preparation and ResNet implementation
 |-- Dataset_32x32/
 |   |-- Training/                # Resized training images organised by class
 |   |-- Test/                    # Resized test images organised by class
@@ -132,7 +132,7 @@ CNNproject_gp5/
 3. Connect to Tailscale and follow the
    [GPU server setup guide](docs/GPU_Setup_Guide.md) to select your own remote
    Python kernel.
-4. Open [model/ResNet_Fruits.ipynb](model/ResNet_Fruits.ipynb). Its current
+4. Open [model/CS4287-Assign-23363185-23390573-23367989.ipynb](model/CS4287-Assign-23363185-23390573-23367989.ipynb). Its current
    dataset path is `/shared-datasets/Dataset_32x32`, which must contain
    `Training/` and `Test/` folders on the server. Update `data_dir` if using
    a different location.
