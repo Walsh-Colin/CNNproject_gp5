@@ -1,160 +1,142 @@
-# Fruits-360: A dataset of images containing fruits, vegetables, nuts, seeds and mushrooms #
+# Fruit Classification Using a ResNet CNN
+
+CS4287 - Neural Computing, Assignment 1  
+University of Limerick | Group 5
 
-## Version: 2026.10.18.2 ##
+**Team:** Colin Walsh, Luke Scanlon and Evelyn Sadlier
 
-## Branch: 100x100 ##
-
-A high-quality dataset of images containing fruits, vegetables, nuts, seeds and mushrooms. The following fruits, vegetables, nuts and seeds are included: 
-Almonds, Apples (different varieties: Crimson Snow, Golden, Golden-Red, Granny Smith, Pink Lady, Red, Red Delicious), Apricot, Avocado, Avocado ripe, Banana (Yellow, Red, Lady Finger), Beetroot Red, Blackberrie, Blueberry, Cabage, Caju seed, Cactus fruit, Cantaloupe (2 varieties), Carambola, Carrot, Cauliflower, Celery, Cherry (different varieties, Rainier), Cherry Wax (Yellow, Red, Black), Cherimoya, Chestnut, Clementine, Cocos, Corn (with husk), Cucumber (ripened, various), Dates, Eggplant (normal and long), Fig, Garlic, Ginger Root, Gooseberry, Granadilla, Grape (Blue, Pink, White (different varieties)), Grapefruit (Pink, White), Guava, Hazelnut, Huckleberry, Kiwi, Kaki, Kohlrabi, Kumsquats, Lemon (normal, Meyer), Lime, Lychee, Mandarine, Mango (Green, Red), Mangostan, Maracuja, Melon Piel de Sapo, Mulberry, Mushroom (Champignon), Nectarine (Regular, Flat), Nut (Forest, Pecan), Onion (Red, White), Orange, Papaya, Passion fruit, Peach (different varieties), Pepino, Pear (different varieties, Abate, Forelle, Kaiser, Monster, Red, Stone, Williams), Pepper (Red, Green, Orange, Yellow), Physalis (normal, with Husk), Pineapple (normal, Mini), Pistachio, Pitahaya Red, Plum (different varieties), Pomegranate, Pomelo Sweetie, Potato (Red, Sweet, White), Quince, Rambutan, Raspberry, Redcurrant, Salak, Strawberry (normal, Wedge), Tamarillo, Tangelo, Tomato (different varieties, Maroon, Cherry Red, Yellow, not ripened, Heart), Walnut, Watermelon, Zucchini (white and dark).
-
-## Dataset properties ##
-
-Total number of images: 196522.
-
-Training set size: 147416 images.
-
-Test set size: 49106 images.
-
-Number of classes: 274 (fruits, vegetables, nuts, seeds and mushrooms).
-
-Image size: 100x100 pixels.
-
-## Filename format ##
-
-image_index_100.jpg (e.g. 31_100.jpg) or 
-
-r_image_index_100.jpg (e.g. r_31_100.jpg) or 
-
-r?_image_index_100.jpg (e.g. r2_31_100.jpg)
-
-where "r" stands for rotated fruit. "r2" means that the fruit was rotated around the 3rd axis. 
-"100" comes from image size (100x100 pixels).
-
-Different varieties of the same fruit (apple for instance) are stored as belonging to different classes.
-
-## Repository structure ##
-
-Folders [Training](Training) and [Test](Test) contain images for training and testing purposes.
-
-## Alternate download ##
-
-The Fruits-360 dataset can be downloaded from: 
-
-**Kaggle** [https://www.kaggle.com/moltean/fruits](https://www.kaggle.com/moltean/fruits)
-
-**GitHub** [https://github.com/fruits-360](https://github.com/fruits-360)
-
-## How to cite ##
-
-Mihai Oltean, __Fruits-360 dataset__, 2017-.
-
-## How the Fruits-360 dataset was created ##
-
-Fruits and vegetables were planted in the shaft of a low speed motor (3 rpm) and a short movie of 20 seconds was recorded. 
-
-A Logitech C920 camera was used for filming the fruits. This is one of the best webcams available.
-
-Behind the fruits I placed a white sheet of paper as background. 
-
-However due to the variations in the lighting conditions, the background was not uniform and I wrote a dedicated algorithm which extract the fruit from the background. This algorithm is of flood fill type: 
-we start from each edge of the image and we mark all pixels there, then we mark all pixels found in the neighborhood of the already marked pixels for which the distance between colors is less than a prescribed value. We repeat the previous step until no more pixels can be marked.
-
-All marked pixels are considered as being background (which is then filled with white) and the rest of pixels are considered as belonging to the object.
-
-The maximum value for the distance between 2 neighbor pixels is a parameter of the algorithm and is set (by trial and error) for each movie.
-
-## History ##
-
-Fruits were filmed at the dates given below (YYYY.MM.DD):
-
-2017.02.25 - Apple (golden).
-
-2017.02.28 - Apple (Red Yellow 1, red, golden2), Kiwi, Pear, Grapefruit, Lemon, Orange, Strawberry.
-
-2017.03.05 - Apple (golden3, Braeburn, Granny Smith, red2).
-
-2017.03.07 - Apple (red3).
-
-2017.05.10 - Plum, Peach, Peach flat, Apricot, Nectarine, Pomegranate.
-
-2017.05.27 - Avocado, Papaya, Grape, Cherrie.
-
-2017.12.25 - Carambula, Cactus fruit, Granadilla, Kaki, Kumsquats, Passion fruit, Avocado ripe, Quince.
-
-2017.12.28 - Clementine, Cocos, Mango, Lime, Lychee.
-
-2017.12.31 - Apple Red Delicious, Pear Monster, Grape White.
-
-2018.01.14 - Banana, Grapefruit Pink, Mandarine, Pineapple, Tangelo.
-
-2018.01.19 - Huckleberry, Raspberry.
-
-2018.01.26 - Dates, Maracuja, Plum 2, Salak, Tamarillo.
-
-2018.02.05 - Guava, Grape White 2, Lemon Meyer
-
-2018.02.07 - Banana Red, Pepino, Pitahaya Red.
-
-2018.02.08 - Pear Abate, Pear Williams.
-
-2018.05.22 - Lemon rotated, Pomegranate rotated.
-
-2018.05.24 - Cherry Rainier, Cherry 2, Strawberry Wedge.
-
-2018.05.26 - Cantaloupe (2 varieties).
-
-2018.05.31 - Melon Piel de Sapo.
-
-2018.06.05 - Pineapple Mini, Physalis, Physalis with Husk, Rumbutan.
-
-2018.06.08 - Mulberry, Redcurrant.
-
-2018.06.16 - Cherry Red, Hazelnut, Walnut, Tomato.
-
-2018.06.17 - Cherry Wax (Yellow, Red, Black).
-
-2018.08.19 - Apple Red Yellow 2, Grape Blue, Grape White 2, Grape White 3, Peach 2, Plum 3, Tomato Maroon, Tomato 1-4.
-
-2018.12.20 - Nut Pecan, Pear Kaiser, Tomato Yellow.
-
-2018.12.21 - Banana Lady Finger, Chesnut, Mangostan.
-
-2018.12.22 - Pomelo Sweetie.
-
-2019.04.21 - Apple Crimson Snow, Apple Pink Lady, Blueberry, Kohlrabi, Mango Red, Pear Red, Pepper (Red, Yellow, Green).
-
-2019.06.18 - Beetroot Red, Cabbage white 1, Carrot 1, Corn, Ginger Root, Nectarine Flat, Nut Forest, Onion Red, Onion Red Peeled, Onion White, Potato Red, Potato Red Washed, Potato Sweet, Potato White, Zucchini 1, Zucchini dark 1.
-
-2019.07.07 - Cauliflower, Eggplant, Pear Forelle, Pepper Orange, Tomato Heart.
-
-2019.09.22 - Corn Husk, Cucumber Ripe, Fig, Pear 2, Pear Stone, Tomato not Ripened, Watermelon.
-
-2021.06.07 - Eggplant long 1.
-
-2021.08.09 - Apple hit 1, Cucumber 1.
-
-2021.09.03 - Pear 3.
-
-2021.09.22 - Apple 6, Cucumber 3.
-
-2023.12.30 - Official Github repository is now [Fruits-360 on Github](https://github.com/fruits-360)
-
-2026.08.30 - First mushroom added.
-
-## License ##
-
-CC BY-SA 4.0
-
-Copyright (c) 2017-, [Mihai Oltean](https://mihaioltean.github.io)
-
-You are free to:
-
-*Share* — copy and redistribute the material in any medium or format for any purpose, even commercially.
-
-*Adapt* — remix, transform, and build upon the material for any purpose, even commercially.
-
-Under the following terms:
-
-*Attribution* — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-
-*ShareAlike* — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+This project develops a ResNet-20 convolutional neural network to classify
+274 categories of fruits, vegetables, nuts, seeds and mushrooms from the
+Fruits-360 dataset.
+
+Images are resized from 100×100 to 32×32 pixels to reduce computational
+cost. We will train and evaluate the model, compare hyperparameter and
+data augmentation choices, and analyse its classification performance.
+
+## Dataset
+
+We use the [Fruits-360 dataset](https://github.com/fruits-360/fruits-360-100x100),
+version **2026.10.18.2** of the 100x100 branch. Its 274 classes include fruits,
+vegetables, nuts, seeds and mushrooms, with different varieties treated as
+separate classes.
+
+| Property | Value |
+| --- | --- |
+| Total images | 196,522 |
+| Original training images | 147,416 |
+| Test images | 49,106 |
+| Classes | 274 |
+| Original image size | 100 x 100 pixels |
+| Project input size | 32 x 32 RGB pixels |
+
+We resize the original images to 32 x 32 pixels and scale pixel values to
+[0, 1]. The notebook splits the original training set into **118,025 training**
+and **29,391 validation** images using a fixed seed of 42. The original test
+set is reserved for final evaluation.
+
+### Dataset credits and licence
+
+The Fruits-360 dataset was created by **Mihai Oltean**. Credit for the original
+images and dataset belongs to its creator and contributors; our group contributes
+the project code, analysis and resized image preparation.
+
+- **Source:** [Fruits-360 original dataset repository](https://github.com/fruits-360/fruits-360-100x100)
+- **Creator:** [Mihai Oltean](https://mihaioltean.github.io)
+- **Copyright:** (c) 2017 onwards, Mihai Oltean
+- **Dataset licence:** [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/), also recorded in [LICENSE](LICENSE)
+- **Changes made for this project:** Images resized from 100 x 100 to 32 x 32 pixels.
+
+The resized dataset remains under CC BY-SA 4.0. When sharing it, retain attribution,
+identify the changes and include the licence link.
+
+## Shared project resources
+
+**Shared report:** [Fruit Classification CNN (OneDrive / SharePoint)](https://ulcampus-my.sharepoint.com/:w:/r/personal/23367989_studentmail_ul_ie/Documents/Fruit%20Classification%20CNN.docx?d=wb0d4a5fec84d40e0830fe739652bddda&csf=1&web=1&e=YspIpL)
+
+The shared Word document is used to collaborate on the project report.
+Access is managed through the document's sharing permissions; contact
+a group member if you need access.
+
+Source code and notebook changes are tracked in this Git repository.
+
+## Self-hosted GPU server
+
+We use a self-hosted Jupyter server with an **NVIDIA RTX 2060 GPU** and
+**TensorFlow 2.17.0** to run our model development, training and experiments.
+Team members edit notebooks in VS Code on their own computers and execute
+cells using a remote Python kernel on the server.
+
+Access requires a **Tailscale connection**, an invitation from the server owner
+and a private Jupyter access token. Follow the
+[GPU server setup guide](docs/GPU_Setup_Guide.md) to connect VS Code,
+verify GPU availability and shut down your session when finished.
+
+- Code runs on the server, so dataset paths must refer to files stored there.
+- GPU memory and computing power are shared; coordinate training runs with the team.
+- Shut down your own kernel after use to release GPU memory.
+- Keep access tokens in your local `.env` file and out of Git commits.
+
+## Model architecture
+
+Our model is a **ResNet-20**, implemented with TensorFlow/Keras in
+[CS4287-Assign-23363185-23390573-23367989.ipynb](model/CS4287-Assign-23363185-23390573-23367989.ipynb). It takes a 32 x 32 RGB image
+and outputs a probability for each of the 274 dataset classes.
+
+| Stage | Structure | Output shape per image |
+| --- | --- | --- |
+| Input | Normalised RGB image | 32 x 32 x 3 |
+| Initial convolution | 3 x 3 convolution, 16 filters, batch normalisation, ReLU | 32 x 32 x 16 |
+| Residual stage 1 | 3 residual blocks, 16 filters | 32 x 32 x 16 |
+| Residual stage 2 | 3 residual blocks, 32 filters; first block downsamples | 16 x 16 x 32 |
+| Residual stage 3 | 3 residual blocks, 64 filters; first block downsamples | 8 x 8 x 64 |
+| Global average pooling | Averages each feature map over its spatial dimensions | 64 features |
+| Classifier | Dense layer with softmax activation | 274 class probabilities |
+
+Each of the **nine residual blocks** contains two 3 x 3 convolutions with batch
+normalisation. A ReLU follows the first convolution's batch normalisation and
+the addition of the shortcut. Skip connections provide a direct path for
+features and gradients through the network. When a block changes the spatial
+size or channel count, its shortcut uses a 1 x 1 convolution and batch
+normalisation to match the shapes before addition.
+
+The current configuration uses **Adam** with a learning rate of **0.001**,
+**sparse categorical cross-entropy** loss and **accuracy** as its training metric.
+
+## Repository structure
+
+```text
+CNNproject_gp5/
+|-- model/
+|   `-- CS4287-Assign-23363185-23390573-23367989.ipynb       # Data preparation and ResNet implementation
+|-- Dataset_32x32/
+|   |-- Training/                # Resized training images organised by class
+|   |-- Test/                    # Resized test images organised by class
+|   `-- config/
+|       `-- resize_training.py   # Image resizing script
+|-- docs/
+|   |-- GPU_Setup_Guide.md       # Remote GPU connection instructions
+|   `-- CS4287_Group5_CNN_Report.docx
+|-- .env_template               # Template for local server credentials
+|-- LICENSE                     # Dataset licence and attribution
+`-- README.md
+```
+
+## Running the notebook
+
+1. Open this repository in VS Code and install Microsoft's **Python** and
+   **Jupyter** extensions.
+2. Copy `.env_template` to a local `.env` file and replace the token placeholder
+   with the private token supplied by the server owner. The `.env` file is
+   ignored by Git. VS Code's remote Jupyter connection must still be configured
+   manually using the setup guide.
+3. Connect to Tailscale and follow the
+   [GPU server setup guide](docs/GPU_Setup_Guide.md) to select your own remote
+   Python kernel.
+4. Open [model/CS4287-Assign-23363185-23390573-23367989.ipynb](model/CS4287-Assign-23363185-23390573-23367989.ipynb). Its current
+   dataset path is `/shared-datasets/Dataset_32x32`, which must contain
+   `Training/` and `Test/` folders on the server. Update `data_dir` if using
+   a different location.
+5. Run the GPU check first, then execute the notebook cells in order. The
+   notebook uses TensorFlow, Pillow and Matplotlib in the remote environment.
+6. Save the notebook and any model outputs, then shut down your own remote
+   kernel as described in the setup guide.
