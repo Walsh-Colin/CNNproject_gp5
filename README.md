@@ -101,3 +101,47 @@ normalisation to match the shapes before addition.
 
 The current configuration uses **Adam** with a learning rate of **0.001**,
 **sparse categorical cross-entropy** loss and **accuracy** as its training metric.
+
+## Repository structure
+
+```text
+CNNproject_gp5/
+|-- model/
+|   `-- ResNet_Fruits.ipynb       # Data preparation and ResNet implementation
+|-- Dataset_32x32/
+|   |-- Training/                # Resized training images organised by class
+|   |-- Test/                    # Resized test images organised by class
+|   `-- config/
+|       `-- resize_training.py   # Image resizing script
+|-- docs/
+|   |-- GPU_Setup_Guide.md       # Remote GPU connection instructions
+|   `-- CS4287_Group5_CNN_Report.docx
+|-- .env_template               # Template for local server credentials
+|-- LICENSE                     # Dataset licence and attribution
+`-- README.md
+```
+
+## Running the notebook
+
+1. Open this repository in VS Code and install Microsoft's **Python** and
+   **Jupyter** extensions.
+2. Copy `.env_template` to a local `.env` file and replace the token placeholder
+   with the private token supplied by the server owner. The `.env` file is
+   ignored by Git. VS Code's remote Jupyter connection must still be configured
+   manually using the setup guide.
+3. Connect to Tailscale and follow the
+   [GPU server setup guide](docs/GPU_Setup_Guide.md) to select your own remote
+   Python kernel.
+4. Open [model/ResNet_Fruits.ipynb](model/ResNet_Fruits.ipynb). Its current
+   dataset path is `/shared-datasets/Dataset_32x32`, which must contain
+   `Training/` and `Test/` folders on the server. Update `data_dir` if using
+   a different location.
+5. Run the GPU check first, then execute the notebook cells in order. The
+   notebook uses TensorFlow, Pillow and Matplotlib in the remote environment.
+6. Save the notebook and any model outputs, then shut down your own remote
+   kernel as described in the setup guide.
+
+**Current status:** The notebook includes data preparation and a compiled
+ResNet architecture. Training, experiments and final evaluation are still to
+be added. A prediction check currently appears before model construction;
+run that check after the model is built and compiled.
