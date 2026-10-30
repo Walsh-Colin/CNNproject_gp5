@@ -75,3 +75,29 @@ verify GPU availability and shut down your session when finished.
 - GPU memory and computing power are shared; coordinate training runs with the team.
 - Shut down your own kernel after use to release GPU memory.
 - Keep access tokens in your local `.env` file and out of Git commits.
+
+## Model architecture
+
+Our model is a **ResNet-20**, implemented with TensorFlow/Keras in
+[ResNet_Fruits.ipynb](model/ResNet_Fruits.ipynb). It takes a 32 x 32 RGB image
+and outputs a probability for each of the 274 dataset classes.
+
+| Stage | Structure | Output shape per image |
+| --- | --- | --- |
+| Input | Normalised RGB image | 32 x 32 x 3 |
+| Initial convolution | 3 x 3 convolution, 16 filters, batch normalisation, ReLU | 32 x 32 x 16 |
+| Residual stage 1 | 3 residual blocks, 16 filters | 32 x 32 x 16 |
+| Residual stage 2 | 3 residual blocks, 32 filters; first block downsamples | 16 x 16 x 32 |
+| Residual stage 3 | 3 residual blocks, 64 filters; first block downsamples | 8 x 8 x 64 |
+| Global average pooling | Averages each feature map over its spatial dimensions | 64 features |
+| Classifier | Dense layer with softmax activation | 274 class probabilities |
+
+Each of the **nine residual blocks** contains two 3 x 3 convolutions with batch
+normalisation. A ReLU follows the first convolution's batch normalisation and
+the addition of the shortcut. Skip connections provide a direct path for
+features and gradients through the network. When a block changes the spatial
+size or channel count, its shortcut uses a 1 x 1 convolution and batch
+normalisation to match the shapes before addition.
+
+The current configuration uses **Adam** with a learning rate of **0.001**,
+**sparse categorical cross-entropy** loss and **accuracy** as its training metric.
