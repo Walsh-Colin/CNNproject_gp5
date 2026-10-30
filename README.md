@@ -140,8 +140,3 @@ CNNproject_gp5/
    notebook uses TensorFlow, Pillow and Matplotlib in the remote environment.
 6. Save the notebook and any model outputs, then shut down your own remote
    kernel as described in the setup guide.
-
-**Current status:** The notebook includes data preparation and a compiled
-ResNet architecture. Training, experiments and final evaluation are still to
-be added. A prediction check currently appears before model construction;
-run that check after the model is built and compiled.
