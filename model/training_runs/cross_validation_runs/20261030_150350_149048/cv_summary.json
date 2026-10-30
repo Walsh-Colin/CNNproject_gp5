@@ -1,0 +1,8 @@
+{
+  "folds_completed": 3,
+  "mean_validation_accuracy": 0.9974358081817627,
+  "std_validation_accuracy": 0.0013349663707222246,
+  "mean_validation_loss": 0.008661676353464523,
+  "std_validation_loss": 0.0036242929785067486,
+  "total_training_seconds": 2315.4542107719462
+}
