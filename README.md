@@ -58,3 +58,20 @@ Access is managed through the document's sharing permissions; contact
 a group member if you need access.
 
 Source code and notebook changes are tracked in this Git repository.
+
+## Self-hosted GPU server
+
+We use a self-hosted Jupyter server with an **NVIDIA RTX 2060 GPU** and
+**TensorFlow 2.17.0** to run our model development, training and experiments.
+Team members edit notebooks in VS Code on their own computers and execute
+cells using a remote Python kernel on the server.
+
+Access requires a **Tailscale connection**, an invitation from the server owner
+and a private Jupyter access token. Follow the
+[GPU server setup guide](docs/GPU_Setup_Guide.md) to connect VS Code,
+verify GPU availability and shut down your session when finished.
+
+- Code runs on the server, so dataset paths must refer to files stored there.
+- GPU memory and computing power are shared; coordinate training runs with the team.
+- Shut down your own kernel after use to release GPU memory.
+- Keep access tokens in your local `.env` file and out of Git commits.
