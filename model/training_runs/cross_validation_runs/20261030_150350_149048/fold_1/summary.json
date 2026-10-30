@@ -1,0 +1,12 @@
+{
+  "fold": 1,
+  "training_images": 98277,
+  "validation_images": 49139,
+  "epochs_completed": 30,
+  "training_seconds": 757.3405450759456,
+  "best_epoch": 26,
+  "training_loss": 0.01649521291255951,
+  "training_accuracy": 0.9946986436843872,
+  "validation_loss": 0.0072684395126998425,
+  "validation_accuracy": 0.9979038834571838
+}

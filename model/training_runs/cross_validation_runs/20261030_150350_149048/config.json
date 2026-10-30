@@ -1,0 +1,11 @@
+{
+  "folds": 3,
+  "epochs_requested": 30,
+  "batch_size": 32,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "seed": 42,
+  "checkpoint_monitor": "val_loss",
+  "tensorflow_version": "2.17.0",
+  "cross_validation_images": 147416
+}
