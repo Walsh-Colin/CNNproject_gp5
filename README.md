@@ -1,3 +1,20 @@
+# Fruit Classification Using a ResNet CNN
+
+CS4287 — Neural Computing, Assignment 1  
+University of Limerick | Group 5
+
+**Team:** Colin Walsh, Luke Scanlon and Evelyn Sadlier
+
+This project develops a ResNet-20 convolutional neural network to classify
+274 categories of fruits, vegetables, nuts, seeds and mushrooms from the
+Fruits-360 dataset.
+
+Images are resized from 100×100 to 32×32 pixels to reduce computational
+cost. We will train and evaluate the model, compare hyperparameter and
+data augmentation choices, and analyse its classification performance.
+
+---
+
 # Fruits-360: A dataset of images containing fruits, vegetables, nuts, seeds and mushrooms #
 
 ## Version: 2026.10.18.2 ##
