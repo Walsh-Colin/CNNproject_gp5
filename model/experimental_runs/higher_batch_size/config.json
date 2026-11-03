@@ -1,0 +1,16 @@
+{
+    "experiment": "Higher Batch Size",
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "batch_size": 64,
+    "epochs": 30,
+    "loss": "Sparse Categorical Crossentropy",
+    "input_shape": [
+        32,
+        32,
+        3
+    ],
+    "num_classes": 274,
+    "residual_blocks": 9,
+    "total_parameters": 291202
+}

@@ -1,0 +1,15 @@
+{
+    "experiment": "Lower Learning Rate",
+    "learning_rate": 0.0001,
+    "batch_size": 32,
+    "epochs_completed": 30,
+    "training_seconds": 1245.6395943164825,
+    "best_validation_accuracy": 0.9974822402000427,
+    "best_accuracy_epoch": 24,
+    "best_validation_loss": 0.007881741970777512,
+    "best_loss_epoch": 29,
+    "final_training_accuracy": 0.9952298402786255,
+    "final_training_loss": 0.0152424992993474,
+    "final_validation_accuracy": 0.993467390537262,
+    "final_validation_loss": 0.018142521381378174
+}
